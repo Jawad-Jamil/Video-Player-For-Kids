@@ -1,0 +1,143 @@
+@media only screen and (min-width: 801px) {
+  *{
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 800px) {
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+    }
+
+
+    :root{
+      --mcolor: #88e2ca;
+    }
+
+    body {
+      background-color: var(--mcolor);
+    }
+
+    .gif_container{
+      position: relative;
+    }
+
+    
+    .gif{
+      max-height: 270px;
+      overflow: hidden;
+      width: 100%;
+      margin-top: -50px;
+   }
+
+
+   svg{
+     position: absolute;
+     bottom: 0;
+     left: 0;
+   }
+
+
+   .heading{
+     margin-left: 20px;
+     color: #222222;
+   }
+
+   .heading h2{
+    font-size: 30px;
+    font-weight: 500;
+   }
+
+   .heading p{
+     font-size: 14px;
+     margin-left: 3px;
+   }
+
+   .poster_wrapper{
+    width: 100%;
+    display: inline-flex;
+    padding: 10px;
+    overflow-x: scroll;
+    position: absolute;
+    bottom: 0;
+   }
+
+   .poster_each_wrapper{
+     margin: 10px;
+     display: inline-block;
+     position: relative;
+   }
+
+   .poster{
+      width: 160px;
+      height: 240px;
+      border-radius: 5px;
+      background-position: center;
+   }
+
+  .poster1{
+    background-image: url("posters/1poster.webp");
+  }
+
+  .poster2{
+    background-image: url("posters/2poster.webp");
+  }
+
+  .poster3{
+    background-image: url("posters/3poster.webp");
+  }
+
+  .poster4{
+    background-image: url("posters/4poster.webp");
+  }
+
+  .poster5{
+    background-image: url("posters/5poster.webp");
+  }
+
+  .poster6{
+    background-image: url("posters/11poster.webp");
+  }
+
+  .poster7{
+    background-image: url("posters/7poster.webp");
+  }
+
+  .poster8{
+    background-image: url("posters/8poster.webp");
+  }
+
+  .poster9{
+    background-image: url("posters/9poster.webp");
+  }
+
+  .poster10{
+    background-image: url("posters/10poster.webp");
+  }
+
+
+  .overly_poster{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0 0 0 / 50%);
+    border-radius: 5px;
+  }
+
+  .overly_poster i{
+    position: absolute;
+    top: 45%;
+    left: 42%;
+    color: #00ffbb;
+    font-size: 30px;
+  }
+
+
+
+  }
