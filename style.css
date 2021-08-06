@@ -62,7 +62,6 @@
     display: inline-flex;
     padding: 10px;
     overflow-x: scroll;
-    position: absolute;
     bottom: 0;
    }
 
@@ -73,9 +72,9 @@
    }
 
    .poster{
-      width: 160px;
-      height: 240px;
-      border-radius: 5px;
+      width: 150px;
+      height: 230px;
+      border-radius: 10px;
       background-position: center;
    }
 
@@ -127,17 +126,49 @@
     width: 100%;
     height: 100%;
     background-color: rgb(0 0 0 / 50%);
-    border-radius: 5px;
+    border-radius: 10px;
+  }
+
+  .overly_video{
+    height: 98%;
+    visibility: hidden;
   }
 
   .overly_poster i{
+    margin: 0;
     position: absolute;
-    top: 45%;
-    left: 42%;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     color: #00ffbb;
     font-size: 30px;
   }
 
-
-
+  .video_wrapper{
+    width: 90%;
+    margin: 30px auto;
+    position: relative;
   }
+
+  #myVid{
+    width: 100%;
+    border-radius: 10px;
+  }
+
+
+  .next_prev_buttons {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    justify-content: space-between;
+    margin: 20px auto;
+  }
+
+  .next_prev_buttons i {
+    color: #222222;
+    font-size: 25px;
+  }
+
+
+}
