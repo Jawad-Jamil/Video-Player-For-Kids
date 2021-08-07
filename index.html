@@ -10,7 +10,7 @@
     <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
 </head>
 <body>
-    <div class="container">
+    <div id="container" class="container">
         <div class="gif_container">
             <img id="gif_img" class="gif" src="gifs/gif2.gif">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="var(--mcolor)" fill-opacity="1" d="M0,32L48,53.3C96,75,192,117,288,154.7C384,192,480,224,576,218.7C672,213,768,171,864,138.7C960,107,1056,85,1152,106.7C1248,128,1344,192,1392,224L1440,256L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>   
@@ -24,65 +24,67 @@
 
 
             <div class="poster_wrapper">
-
-                <div class="poster_each_wrapper">
-                    <a href="https://jawad-jamil.github.io/YouTube-For-Kids/play.html"><div class="poster poster1"></div>
-                    <div class="overly_poster"><i class="fas fa-play-circle"></i></div>
+                
+                <div onclick="play_page(), document.querySelector('#myVid').src='videos/video1.mp4'">
+                    <div class="poster_each_wrapper">
+                        <div class="poster poster1"></div>
+                        <div class="overly_poster"><i class="fas fa-play-circle"></i></div>
+                    </div>
                 </div>
 
 
-                <div class="poster_each_wrapper">
-                    <a href="https://jawad-jamil.github.io/YouTube-For-Kids/play.html"><div class="poster poster2"></div>
+                <div onclick="play_page(), document.querySelector('#myVid').src='videos/video2.mp4'"><div class="poster_each_wrapper">
+                    <div class="poster poster2"></div>
                     <div class="overly_poster"><i class="fas fa-play-circle"></i></div>
-                </div>
+                </div></div>
 
 
-                <div class="poster_each_wrapper">
-                    <a href="https://jawad-jamil.github.io/YouTube-For-Kids/play.html"><div class="poster poster3"></div>
+                <div onclick="play_page(), document.querySelector('#myVid').src='videos/video3.mp4'"><div class="poster_each_wrapper">
+                    <div class="poster poster3"></div>
                     <div class="overly_poster"><i class="fas fa-play-circle"></i></div>
-                </div>
+                </div></div>
 
 
-                <div class="poster_each_wrapper">
-                    <a href="https://jawad-jamil.github.io/YouTube-For-Kids/play.html"><div class="poster poster4"></div>
+                <div onclick="play_page(), document.querySelector('#myVid').src='videos/video4.mp4'"><div class="poster_each_wrapper">
+                    <div class="poster poster4"></div>
                     <div class="overly_poster"><i class="fas fa-play-circle"></i></div>
-                </div>
+                </div></div>
 
 
-                <div class="poster_each_wrapper">
-                    <a href="https://jawad-jamil.github.io/YouTube-For-Kids/play.html"><div class="poster poster5"></div>
+                <div onclick="play_page(), document.querySelector('#myVid').src='videos/video5.mp4'"><div class="poster_each_wrapper">
+                    <div class="poster poster5"></div>
                     <div class="overly_poster"><i class="fas fa-play-circle"></i></div>
-                </div>
+                </div></div>
 
 
-                <div class="poster_each_wrapper">
-                    <a href="https://jawad-jamil.github.io/YouTube-For-Kids/play.html"><div class="poster poster6"></div>
+                <div onclick="play_page(), document.querySelector('#myVid').src='videos/video6.mp4'"><div class="poster_each_wrapper">
+                    <div class="poster poster6"></div>
                     <div class="overly_poster"><i class="fas fa-play-circle"></i></div>
-                </div>
+                </div></div>
 
 
-                <div class="poster_each_wrapper">
-                    <a href="https://jawad-jamil.github.io/YouTube-For-Kids/play.html"><div class="poster poster7"></div>
+                <div onclick="play_page(), document.querySelector('#myVid').src='videos/video7.mp4'"><div class="poster_each_wrapper">
+                    <div class="poster poster7"></div>
                     <div class="overly_poster"><i class="fas fa-play-circle"></i></div>
-                </div>
+                </div></div>
 
 
-                <div class="poster_each_wrapper">
-                    <a href="https://jawad-jamil.github.io/YouTube-For-Kids/play.html"><div class="poster poster8"></div>
+                <div onclick="play_page(), document.querySelector('#myVid').src='videos/video8.mp4'"><div class="poster_each_wrapper">
+                    <div class="poster poster8"></div>
                     <div class="overly_poster"><i class="fas fa-play-circle"></i></div>
-                </div>
+                </div></div>
 
 
-                <div class="poster_each_wrapper">
-                    <a href="https://jawad-jamil.github.io/YouTube-For-Kids/play.html"><div class="poster poster9"></div>
+                <div onclick="play_page(), document.querySelector('#myVid').src='videos/video9.mp4'"><div class="poster_each_wrapper">
+                    <div class="poster poster9"></div>
                     <div class="overly_poster"><i class="fas fa-play-circle"></i></div>
-                </div>
+                </div></div>
 
 
-                <div class="poster_each_wrapper">
-                    <a href="https://jawad-jamil.github.io/YouTube-For-Kids/play.html"><div class="poster poster10"></div>
+                <div onclick="play_page(), document.querySelector('#myVid').src='videos/video1.mp4'"><div class="poster_each_wrapper">
+                    <div class="poster poster10"></div>
                     <div class="overly_poster"><i class="fas fa-play-circle"></i></div>
-                </div>
+                </div></div>
 
             </div>
         </div>
@@ -91,6 +93,59 @@
 
 
 
+    <div id="container_play" class="container_play">
+        <div class="next_prev_buttons">
+            <i onclick="prevVideo()" class="fas fa-chevron-left"></i>
+            <i onclick="nextVideo()" class="fas fa-chevron-right"></i>
+        </div>
+
+        <div class="video_wrapper">
+            <video onclick="playPause()" src="videos/video1.mp4" type="video/mp4" id="myVid" autoplay></video>
+            <div class="overly_poster overly_video"><i onclick="playPause()" id="playPause_btn" class="fas fa-play-circle"></i></div>
+        </div>
+
+
+        <div class="play_heading_wrapper">
+            <div id="left_text" class="left_text">
+                <h3 id="play_h_text">Siraj | Ep-1</h3>
+                <p>Entertenment</p>
+            </div>
+
+            <div class="right_fav">
+                <i id="fav_icon" class="far fa-heart"></i>
+                <!-- solid: fas fa-heart -->
+            </div>
+        </div>
+
+
+
+        <div class="range_wrapper">
+            <div class="inp_range">
+                <input value="0" min="0" max="100" type="range" name="range" id="rangeId" step="1">
+            </div>
+
+            <div class="duration_wrapper">
+                <div class="left_duration">0:00</div>
+                <div class="right_duration"></div>
+            </div>
+        </div>
+
+
+        <div class="subrange">
+            <div class="left_sub_range">
+                <i onclick="previousing()" class="fas fa-angle-double-left"></i>
+            </div>
+
+            <div class="sub_play_pause"><i onclick="playPause()" id="playPause_btn2" class="fas fa-play-circle"></i></div>
+
+            <div class="right_sub_range">
+                <i onclick="nexting()" class="fas fa-angle-double-right"></i>
+            </div>
+        </div>
+
+        <div  onclick="home()" class="home_btn_wrapper"><button id="home">Home</button></div>
+
+    </div>
 
 
 </body>
