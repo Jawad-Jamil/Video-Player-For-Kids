@@ -1,3 +1,4 @@
+
 let pics = [
 "gifs/gif5.gif",
 "gifs/gif4.gif",
@@ -46,10 +47,61 @@ let all_video = [
 
 
 let VideoTag = document.querySelector('#myVid');
+let play_head = document.getElementById("play_h_text")
+let range = document.querySelector("#rangeId");
+let left_duration = document.querySelector(".left_duration");
+let right_duration = document.querySelector(".right_duration");
+
+range.addEventListener("change", VidSeek)
+VideoTag.addEventListener("timeupdate", seektimeupdate)
+
+
+function seektimeupdate() {
+    let new_time = VideoTag.currentTime * (100/VideoTag.duration)
+    range.value = new_time;
+    left_duration.innerHTML = (VideoTag.currentTime/60);
+    right_duration.innerHTML = (VideoTag.duration/60);
+}
+
+
+function VidSeek() {
+    let seekto = VideoTag.duration * (range.value/100)
+    VideoTag.currentTime = seekto;
+    right_duration.innerHTML = VideoTag.duration;
+}
+
+
+function nexting() {
+    VideoTag.currentTime+=3;
+}
+
+function previousing() {
+    VideoTag.currentTime-=3;
+}
+
+
+let playPause2 = document.getElementById("playPause_btn2")
 
 let count = 0;
 
+
+window.onload = function() {
+    if (playPause2.classList.contains("fa-play-circle")) {
+        playPause2.classList.remove("fa-play-circle")
+        playPause2.classList.add("fa-pause-circle")
+    }
+}
+
 function nextVideo(){
+
+    if (playPause2.classList.contains("fa-play-circle")) {
+        playPause2.classList.remove("fa-play-circle")
+        playPause2.classList.add("fa-pause-circle")
+    }
+
+    poster.setAttribute("style", "visibility: hidden; transition:.2s;");
+    play_btn.setAttribute("style", "opacity:0;")
+
     count++;
 
     if (count>=all_video.length) {
@@ -57,9 +109,19 @@ function nextVideo(){
     }
 
     VideoTag.src = all_video[count];
+    play_head.innerHTML = 'Siraj | Ep-'+[count+1]
 }
 
+
 function prevVideo() {
+
+    if (playPause2.classList.contains("fa-play-circle")) {
+        playPause2.classList.remove("fa-play-circle")
+        playPause2.classList.add("fa-pause-circle")
+    }
+    poster.setAttribute("style", "visibility: hidden; transition:.2s;");
+    play_btn.setAttribute("style", "opacity:0;")
+
     count--
 
     if (count<0) {
@@ -70,21 +132,20 @@ function prevVideo() {
 }
 
 
-
-let MyVideo = document.getElementById("myVid")
-let poster = document.querySelector(".overly_poster")
+let poster = document.querySelector(".overly_video")
 let play_btn = document.getElementById("playPause_btn")
+let VideoTags = document.getElementById('myVid');
 
 function playPause() {
-    if (MyVideo.paused) {
-        MyVideo.play()
+    if (VideoTag.paused) {
+        VideoTag.play()
         poster.setAttribute("style", "visibility: hidden; transition:.2s;");
         play_btn.classList.remove('fa-play-circle');
         play_btn.classList.add('fa-pause-circle');
         play_btn.setAttribute("style", "padding-top: 50px; transition:.2s; opacity:0;")
         
-    } else if (MyVideo.played) {
-        MyVideo.pause()
+    } else if (VideoTag.played) {
+        VideoTag.pause()
         poster.style.display = "inline-block";
         poster.setAttribute("style", "visibility: visible; transition:.2s;");
         play_btn.classList.remove('fa-pause-circle');
@@ -92,14 +153,43 @@ function playPause() {
         play_btn.setAttribute("style", "padding-top: 0px; transition:.2s; opacity:1;")
     }
 
+    if (VideoTags.played) {
+        playPause2.classList.remove('fa-play-circle');
+        playPause2.classList.add('fa-pause-circle');
+    }
+    
+    if (VideoTags.paused) {
+        playPause2.classList.remove('fa-pause-circle');
+        playPause2.classList.add('fa-play-circle');
+    }
+
+
 }
+
+
+let favorate = document.querySelector("#fav_icon");
+
+favorate.addEventListener("click", function() {
+    favorate.classList.toggle("fas")
+    favorate.classList.toggle("fav_icon")
+});
+
+
+
+function play_page() {
+    document.getElementById("container").style.display='none';
+    document.getElementById("container_play").style.display='block';
+}
+
+
+function home() {
+    document.querySelector('#myVid').src='#'
+    document.getElementById("container").style.display='flex';
+    document.getElementById("container_play").style.display='none';
+}
+
 
 // function display_overly() {
 //     poster.setAttribute("style", "visibility: visible; transition:.2s;");
 //     play_btn.setAttribute("style", "padding-top: 0px; transition:.2s; opacity:1;")
 // }
-
-function hiding() {
-    poster.setAttribute("style", "visibility: hidden; transition:.2s;");
-    play_btn.setAttribute("style", "opacity:0;")
-}
