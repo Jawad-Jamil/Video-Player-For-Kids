@@ -51,6 +51,11 @@ let play_head = document.getElementById("play_h_text")
 let range = document.querySelector("#rangeId");
 let left_duration = document.querySelector(".left_duration");
 let right_duration = document.querySelector(".right_duration");
+let hours = document.querySelector(".hours");
+let minute = document.querySelector(".minute");
+let minute_duration = document.querySelector(".minute_duration");
+let second = document.querySelector(".second");
+let second_duration = document.querySelector(".second_duration");
 
 range.addEventListener("change", VidSeek)
 VideoTag.addEventListener("timeupdate", seektimeupdate)
@@ -59,8 +64,22 @@ VideoTag.addEventListener("timeupdate", seektimeupdate)
 function seektimeupdate() {
     let new_time = VideoTag.currentTime * (100/VideoTag.duration)
     range.value = new_time;
-    left_duration.innerHTML = (VideoTag.currentTime/60);
-    right_duration.innerHTML = (VideoTag.duration/60);
+
+    minute.innerHTML = (VideoTag.currentTime/60);
+    minute_duration.innerHTML = (VideoTag.duration/60);
+
+    if ((VideoTag.currentTime%60)<10) {
+        second.innerHTML = "0" + (VideoTag.currentTime%60);
+    } else{
+        second.innerHTML = (VideoTag.currentTime%60);
+    }
+
+    if ((VideoTag.duration%60)<10) {
+        second_duration.innerHTML = "0" + (VideoTag.duration%60);
+    } else{
+        second_duration.innerHTML = (VideoTag.duration%60);
+    }
+
 }
 
 
