@@ -250,7 +250,17 @@
 
   .left_duration , .right_duration{
     font-size: 14px;
-    width: 27px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .minute, .minute_duration {
+    width: 8px;
+    overflow: hidden;
+  }
+
+  .second, .second_duration {
+    width: 16px;
     overflow: hidden;
   }
 
