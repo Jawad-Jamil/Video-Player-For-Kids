@@ -109,6 +109,8 @@ window.onload = function() {
         playPause2.classList.remove("fa-play-circle")
         playPause2.classList.add("fa-pause-circle")
     }
+    
+    document.querySelector('#myVid').src='#'
 }
 
 function nextVideo(){
